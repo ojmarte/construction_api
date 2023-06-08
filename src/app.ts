@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 // Import your routes here
 import equipmentPerformanceRoutes from './api/routes/equipmentPerformance.route';
@@ -36,6 +37,8 @@ app.use('/api', toolRoutes);
 app.get('/', (_req, res) => {
   res.send('Welcome to the API!');
 });
+
+dotenv.config();
 
 // Connect to the database
 connectToDatabase()
