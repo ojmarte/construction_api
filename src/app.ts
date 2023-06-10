@@ -12,11 +12,16 @@ import materialRoutes from './api/routes/material.route';
 import materialYieldRoutes from './api/routes/materialYield.route';
 import toolRoutes from './api/routes/tools.route';
 
+import setupSwagger from '../swagger';
+
 // Import your database configuration here
 import connectToDatabase from './config/database';
 
 // Create the Express application
 const app: Application = express();
+
+// Add this line to set up the Swagger documentation
+setupSwagger(app);
 
 // Apply middleware
 app.use(express.json());
