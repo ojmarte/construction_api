@@ -13,6 +13,51 @@ const labourController = new LabourController();
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     LabourProfession:
+ *       type: object
+ *       properties:
+ *         labour_name:
+ *           type: string
+ *           description: The name of the labour profession
+ *         category:
+ *           type: string
+ *           description: The category of the labour profession
+ *         level:
+ *           type: string
+ *           description: The level of the labour profession
+ *         unit:
+ *           type: object
+ *           properties:
+ *             measurement:
+ *               type: string
+ *               description: The measurement unit of the labour profession
+ *             currency:
+ *               type: string
+ *               description: The currency unit of the labour profession
+ *         rates:
+ *           type: array
+ *           items:
+ *             type: object
+ *             properties:
+ *               value:
+ *                 type: number
+ *                 description: The rate value
+ *               date:
+ *                 type: string
+ *                 format: date
+ *                 description: The date of the rate
+ *       required:
+ *         - labour_name
+ *         - category
+ *         - level
+ *         - unit
+ *         - rates
+ */
+
+/**
+ * @swagger
  * /api/labour:
  *   get:
  *     summary: Get all labour professions

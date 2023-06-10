@@ -13,6 +13,47 @@ const materialController = new MaterialController();
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     Material:
+ *       type: object
+ *       properties:
+ *         material_name:
+ *           type: string
+ *           description: The name of the material
+ *         category:
+ *           type: string
+ *           description: The category of the material
+ *         unit:
+ *           type: object
+ *           properties:
+ *             measurement:
+ *               type: string
+ *               description: The measurement unit of the material
+ *             currency:
+ *               type: string
+ *               description: The currency unit of the material
+ *         prices:
+ *           type: array
+ *           items:
+ *             type: object
+ *             properties:
+ *               price:
+ *                 type: number
+ *                 description: The price value
+ *               date:
+ *                 type: string
+ *                 format: date
+ *                 description: The date of the price
+ *       required:
+ *         - material_name
+ *         - category
+ *         - unit
+ *         - prices
+ */
+
+/**
+ * @swagger
  * /api/materials:
  *   get:
  *     summary: Get all materials

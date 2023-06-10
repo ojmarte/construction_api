@@ -13,6 +13,47 @@ const toolController = new ToolController();
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     Tool:
+ *       type: object
+ *       properties:
+ *         tool_name:
+ *           type: string
+ *           description: The name of the tool
+ *         category:
+ *           type: string
+ *           description: The category of the tool
+ *         unit:
+ *           type: object
+ *           properties:
+ *             measurement:
+ *               type: string
+ *               description: The measurement unit of the tool
+ *             currency:
+ *               type: string
+ *               description: The currency unit of the tool
+ *         prices:
+ *           type: array
+ *           items:
+ *             type: object
+ *             properties:
+ *               price:
+ *                 type: number
+ *                 description: The price value
+ *               date:
+ *                 type: string
+ *                 format: date
+ *                 description: The date of the price
+ *       required:
+ *         - tool_name
+ *         - category
+ *         - unit
+ *         - prices
+ */
+
+/**
+ * @swagger
  * /api/tools:
  *   get:
  *     summary: Get all tools

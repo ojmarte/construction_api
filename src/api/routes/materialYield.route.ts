@@ -13,6 +13,37 @@ const materialYieldController = new MaterialYieldController();
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     MaterialYield:
+ *       type: object
+ *       properties:
+ *         material_id:
+ *           type: string
+ *           format: uuid
+ *           description: The ID of the material
+ *         yield_name:
+ *           type: string
+ *           description: The name of the yield
+ *         category:
+ *           type: string
+ *           description: The category of the yield
+ *         unit:
+ *           type: string
+ *           description: The unit of measurement for the yield
+ *         yield:
+ *           type: number
+ *           description: The yield value
+ *       required:
+ *         - material_id
+ *         - yield_name
+ *         - category
+ *         - unit
+ *         - yield
+ */
+
+/**
+ * @swagger
  * /api/material-yields:
  *   post:
  *     summary: Create a new material yield
