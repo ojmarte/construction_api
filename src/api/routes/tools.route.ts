@@ -13,7 +13,7 @@ const toolController = new ToolController();
 
 /**
  * @swagger
- * /tools:
+ * /api/tools:
  *   get:
  *     summary: Get all tools
  *     tags: [Tools]
@@ -27,7 +27,7 @@ router.get('/tools', toolController.getAllTools);
 
 /**
  * @swagger
- * /tools/{id}:
+ * /api/tools/{id}:
  *   get:
  *     summary: Get a tool by ID
  *     tags: [Tools]
@@ -50,7 +50,7 @@ router.get('/tools/:id', toolController.getToolById);
 
 /**
  * @swagger
- * /tools:
+ * /api/tools:
  *   post:
  *     summary: Create a new tool
  *     tags: [Tools]
@@ -72,7 +72,7 @@ router.post('/tools', toolController.createTool);
 
 /**
  * @swagger
- * /tools/{id}:
+ * /api/tools/{id}:
  *   put:
  *     summary: Update a tool by ID
  *     tags: [Tools]
@@ -103,7 +103,7 @@ router.put('/tools/:id', toolController.updateToolById);
 
 /**
  * @swagger
- * /tools/{id}:
+ * /api/tools/{id}:
  *   delete:
  *     summary: Delete a tool by ID
  *     tags: [Tools]
@@ -126,7 +126,7 @@ router.delete('/tools/:id', toolController.deleteToolById);
 
 /**
  * @swagger
- * /tools/{id}/price:
+ * /api/tools/{id}/price:
  *   post:
  *     summary: Add price to a tool
  *     tags: [Tools]

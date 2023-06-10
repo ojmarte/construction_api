@@ -13,7 +13,7 @@ const equipmentController = new EquipmentController();
 
 /**
  * @swagger
- * /equipment:
+ * /api/equipment:
  *   get:
  *     summary: Get all equipment
  *     tags: [Equipment]
@@ -27,7 +27,7 @@ router.get('/equipment', equipmentController.getAllEquipment);
 
 /**
  * @swagger
- * /equipment/{id}:
+ * /api/equipment/{id}:
  *   get:
  *     summary: Get an equipment by ID
  *     tags: [Equipment]
@@ -50,7 +50,7 @@ router.get('/equipment/:id', equipmentController.getEquipmentById);
 
 /**
  * @swagger
- * /equipment:
+ * /api/equipment:
  *   post:
  *     summary: Create a new equipment
  *     tags: [Equipment]
@@ -72,7 +72,7 @@ router.post('/equipment', equipmentController.createEquipment);
 
 /**
  * @swagger
- * /equipment/{id}:
+ * /api/equipment/{id}:
  *   put:
  *     summary: Update an equipment by ID
  *     tags: [Equipment]
@@ -103,7 +103,7 @@ router.put('/equipment/:id', equipmentController.updateEquipmentById);
 
 /**
  * @swagger
- * /equipment/{id}:
+ * /api/equipment/{id}:
  *   delete:
  *     summary: Delete an equipment by ID
  *     tags: [Equipment]
@@ -126,7 +126,7 @@ router.delete('/equipment/:id', equipmentController.deleteEquipmentById);
 
 /**
  * @swagger
- * /equipment/{id}/price:
+ * /api/equipment/{id}/price:
  *   post:
  *     summary: Add price to an equipment
  *     tags: [Equipment]

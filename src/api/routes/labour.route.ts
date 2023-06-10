@@ -13,7 +13,7 @@ const labourController = new LabourController();
 
 /**
  * @swagger
- * /labour:
+ * /api/labour:
  *   get:
  *     summary: Get all labour professions
  *     tags: [Labour]
@@ -27,7 +27,7 @@ router.get('/labour', labourController.getAllLabourProfessions);
 
 /**
  * @swagger
- * /labour/{id}:
+ * /api/labour/{id}:
  *   get:
  *     summary: Get a labour profession by ID
  *     tags: [Labour]
@@ -50,7 +50,7 @@ router.get('/labour/:id', labourController.getLabourById);
 
 /**
  * @swagger
- * /labour:
+ * /api/labour:
  *   post:
  *     summary: Create a new labour profession
  *     tags: [Labour]
@@ -72,7 +72,7 @@ router.post('/labour', labourController.createLabourProfession);
 
 /**
  * @swagger
- * /labour/{id}:
+ * /api/labour/{id}:
  *   put:
  *     summary: Update a labour profession by ID
  *     tags: [Labour]
@@ -103,7 +103,7 @@ router.put('/labour/:id', labourController.updateLabourProfessionById);
 
 /**
  * @swagger
- * /labour/{id}:
+ * /api/labour/{id}:
  *   delete:
  *     summary: Delete a labour profession by ID
  *     tags: [Labour]
@@ -126,7 +126,7 @@ router.delete('/labour/:id', labourController.deleteLabourProfessionById);
 
 /**
  * @swagger
- * /labour/{id}/rate:
+ * /api/labour/{id}/rate:
  *   post:
  *     summary: Add rate to a labour profession
  *     tags: [Labour]

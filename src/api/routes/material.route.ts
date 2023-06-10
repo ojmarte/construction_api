@@ -13,7 +13,7 @@ const materialController = new MaterialController();
 
 /**
  * @swagger
- * /materials:
+ * /api/materials:
  *   get:
  *     summary: Get all materials
  *     tags: [Materials]
@@ -27,7 +27,7 @@ router.get('/materials', materialController.getAllMaterials);
 
 /**
  * @swagger
- * /materials/{id}:
+ * /api/materials/{id}:
  *   get:
  *     summary: Get a material by ID
  *     tags: [Materials]
@@ -50,7 +50,7 @@ router.get('/materials/:id', materialController.getMaterialById);
 
 /**
  * @swagger
- * /materials:
+ * /api/materials:
  *   post:
  *     summary: Create a new material
  *     tags: [Materials]
@@ -72,7 +72,7 @@ router.post('/materials', materialController.createMaterial);
 
 /**
  * @swagger
- * /materials/{id}:
+ * /api/materials/{id}:
  *   put:
  *     summary: Update a material by ID
  *     tags: [Materials]
@@ -103,7 +103,7 @@ router.put('/materials/:id', materialController.updateMaterialById);
 
 /**
  * @swagger
- * /materials/{id}:
+ * /api/materials/{id}:
  *   delete:
  *     summary: Delete a material by ID
  *     tags: [Materials]
@@ -126,7 +126,7 @@ router.delete('/materials/:id', materialController.deleteMaterialById);
 
 /**
  * @swagger
- * /materials/{id}/price:
+ * /api/materials/{id}/price:
  *   post:
  *     summary: Add price to a material
  *     tags: [Materials]

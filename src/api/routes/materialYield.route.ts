@@ -13,7 +13,7 @@ const materialYieldController = new MaterialYieldController();
 
 /**
  * @swagger
- * /material-yields:
+ * /api/material-yields:
  *   post:
  *     summary: Create a new material yield
  *     tags: [MaterialYields]
@@ -35,7 +35,7 @@ router.post('/material-yields', materialYieldController.createMaterialYield);
 
 /**
  * @swagger
- * /material-yields/{id}:
+ * /api/material-yields/{id}:
  *   put:
  *     summary: Update a material yield by ID
  *     tags: [MaterialYields]
@@ -66,7 +66,7 @@ router.put('/material-yields/:id', materialYieldController.updateMaterialYieldBy
 
 /**
  * @swagger
- * /material-yields/{id}:
+ * /api/material-yields/{id}:
  *   delete:
  *     summary: Delete a material yield by ID
  *     tags: [MaterialYields]
@@ -89,7 +89,7 @@ router.delete('/material-yields/:id', materialYieldController.deleteMaterialYiel
 
 /**
  * @swagger
- * /material-yields:
+ * /api/material-yields:
  *   get:
  *     summary: Get all material yields
  *     tags: [MaterialYields]
@@ -103,7 +103,7 @@ router.get('/material-yields', materialYieldController.getAllMaterialYields);
 
 /**
  * @swagger
- * /material-yields/{id}:
+ * /api/material-yields/{id}:
  *   get:
  *     summary: Get a material yield by ID
  *     tags: [MaterialYields]
@@ -126,7 +126,7 @@ router.get('/material-yields/:id', materialYieldController.getMaterialYieldById)
 
 /**
  * @swagger
- * /material-yields/by-material/{materialId}:
+ * /api/material-yields/by-material/{materialId}:
  *   get:
  *     summary: Get material yields by material ID
  *     tags: [MaterialYields]

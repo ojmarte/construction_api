@@ -13,7 +13,7 @@ const equipmentPerformanceController = new EquipmentPerformanceController();
 
 /**
  * @swagger
- * /equipment-performance:
+ * /api/equipment-performance:
  *   post:
  *     summary: Create a new equipment performance
  *     tags: [EquipmentPerformance]
@@ -35,7 +35,7 @@ router.post('/equipment-performance', equipmentPerformanceController.createEquip
 
 /**
  * @swagger
- * /equipment-performance:
+ * /api/equipment-performance:
  *   get:
  *     summary: Get all equipment performances
  *     tags: [EquipmentPerformance]
@@ -49,7 +49,7 @@ router.get('/equipment-performance', equipmentPerformanceController.getAllEquipm
 
 /**
  * @swagger
- * /equipment-performance/{id}:
+ * /api/equipment-performance/{id}:
  *   get:
  *     summary: Get an equipment performance by ID
  *     tags: [EquipmentPerformance]
@@ -72,7 +72,7 @@ router.get('/equipment-performance/:id', equipmentPerformanceController.getEquip
 
 /**
  * @swagger
- * /equipment/{equipmentId}/equipment-performance:
+ * /api/equipment/{equipmentId}/equipment-performance:
  *   get:
  *     summary: Get equipment performances by equipment ID
  *     tags: [EquipmentPerformance]
@@ -95,7 +95,7 @@ router.get('/equipment/:equipmentId/equipment-performance', equipmentPerformance
 
 /**
  * @swagger
- * /equipment-performance/{id}:
+ * /api/equipment-performance/{id}:
  *   put:
  *     summary: Update an equipment performance by ID
  *     tags: [EquipmentPerformance]
@@ -126,7 +126,7 @@ router.put('/equipment-performance/:id', equipmentPerformanceController.updateEq
 
 /**
  * @swagger
- * /equipment-performance/{id}:
+ * /api/equipment-performance/{id}:
  *   delete:
  *     summary: Delete an equipment performance by ID
  *     tags: [EquipmentPerformance]
