@@ -3,6 +3,7 @@ import { Schema, model, Document } from 'mongoose';
 export interface Profession extends Document {
   labour_name: string;
   category: string;
+  level: string;
   unit: Unit;
   rates: Rate[];
 }
@@ -20,6 +21,7 @@ export interface Rate {
 const labourSchema = new Schema<Profession>({
   labour_name: { type: String, required: true },
   category: { type: String, required: true },
+  level: { type: String, required: true },
   unit: {
     measurement: { type: String, required: true },
     currency: { type: String, required: true },
