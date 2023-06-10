@@ -3,6 +3,7 @@ import { Schema, model, Document } from 'mongoose';
 export interface EquipmentPerformance extends Document {
   equipment_id: Schema.Types.ObjectId;
   equipment_type: string;
+  condition: string;
   performance_name: string;
   unit: string;
   performance_value: number;
@@ -12,6 +13,7 @@ export interface EquipmentPerformance extends Document {
 const equipmentPerformanceSchema = new Schema<EquipmentPerformance>({
   equipment_id: { type: Schema.Types.ObjectId, required: true },
   equipment_type: { type: String, required: true },
+  condition: { type: String, required: true },
   performance_name: { type: String, required: true },
   unit: { type: String, required: true },
   performance_value: { type: Number, required: true },
