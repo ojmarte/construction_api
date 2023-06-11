@@ -7,10 +7,11 @@ import dotenv from 'dotenv';
 // Import your routes here
 import equipmentPerformanceRoutes from './api/routes/equipmentPerformance.route';
 import equipmentRoutes from './api/routes/equipments.route';
-import labourRoutes from './api/routes/labour.route';
+import workerRoutes from './api/routes/worker.route';
 import materialRoutes from './api/routes/material.route';
 import materialYieldRoutes from './api/routes/materialYield.route';
 import toolRoutes from './api/routes/tools.route';
+import jobRoutes from './api/routes/job.route';
 
 import setupSwagger from '../swagger';
 
@@ -33,10 +34,11 @@ app.use(cors());
 // Register your routes here
 app.use('/api', equipmentPerformanceRoutes);
 app.use('/api', equipmentRoutes);
-app.use('/api', labourRoutes);
+app.use('/api', workerRoutes);
 app.use('/api', materialRoutes);
 app.use('/api', materialYieldRoutes);
 app.use('/api', toolRoutes);
+app.use('/api', jobRoutes);
 
 // Define a default route
 app.get('/', (_req, res) => {

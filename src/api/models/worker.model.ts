@@ -1,7 +1,7 @@
 import { Schema, model, Document } from 'mongoose';
 
 export interface Profession extends Document {
-  labour_name: string;
+  worker_name: string;
   category: string;
   level: string;
   unit: Unit;
@@ -18,8 +18,8 @@ export interface Rate {
   date: Date;
 }
 
-const labourSchema = new Schema<Profession>({
-  labour_name: { type: String, required: true },
+const workerSchema = new Schema<Profession>({
+  worker_name: { type: String, required: true },
   category: { type: String, required: true },
   level: { type: String, required: true },
   unit: {
@@ -34,7 +34,7 @@ const labourSchema = new Schema<Profession>({
   ],
 });
 
-const LabourModel = model<Profession>('labour', labourSchema);
+const WorkerModel = model<Profession>('worker', workerSchema);
 
-export default LabourModel;
+export default WorkerModel;
 

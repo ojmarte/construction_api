@@ -1,41 +1,41 @@
 import { Router } from 'express';
-import { LabourController } from '../controllers/labour.controller';
+import { WorkerController } from '../controllers/worker.controller';
 
 const router = Router();
-const labourController = new LabourController();
+const workerController = new WorkerController();
 
 /**
  * @swagger
  * tags:
- *   name: Labour
- *   description: API endpoints for managing labour professions
+ *   name: Worker
+ *   description: API endpoints for managing worker professions
  */
 
 /**
  * @swagger
  * components:
  *   schemas:
- *     LabourProfession:
+ *     workerProfession:
  *       type: object
  *       properties:
- *         labour_name:
+ *         worker_name:
  *           type: string
- *           description: The name of the labour profession
+ *           description: The name of the worker profession
  *         category:
  *           type: string
- *           description: The category of the labour profession
+ *           description: The category of the worker profession
  *         level:
  *           type: string
- *           description: The level of the labour profession
+ *           description: The level of the worker profession
  *         unit:
  *           type: object
  *           properties:
  *             measurement:
  *               type: string
- *               description: The measurement unit of the labour profession
+ *               description: The measurement unit of the worker profession
  *             currency:
  *               type: string
- *               description: The currency unit of the labour profession
+ *               description: The currency unit of the worker profession
  *         rates:
  *           type: array
  *           items:
@@ -49,7 +49,7 @@ const labourController = new LabourController();
  *                 format: date
  *                 description: The date of the rate
  *       required:
- *         - labour_name
+ *         - worker_name
  *         - category
  *         - level
  *         - unit
@@ -58,130 +58,130 @@ const labourController = new LabourController();
 
 /**
  * @swagger
- * /api/labour:
+ * /api/worker:
  *   get:
- *     summary: Get all labour professions
- *     tags: [Labour]
+ *     summary: Get all worker professions
+ *     tags: [Worker]
  *     responses:
  *       200:
  *         description: Successful operation
  */
 
-// GET /labour
-router.get('/labour', labourController.getAllLabourProfessions);
+// GET /worker
+router.get('/worker', workerController.getAllWorkerProfessions);
 
 /**
  * @swagger
- * /api/labour/{id}:
+ * /api/worker/{id}:
  *   get:
- *     summary: Get a labour profession by ID
- *     tags: [Labour]
+ *     summary: Get a worker profession by ID
+ *     tags: [Worker]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: string
  *         required: true
- *         description: Labour profession ID
+ *         description: Worker profession ID
  *     responses:
  *       200:
  *         description: Successful operation
  *       404:
- *         description: Labour profession not found
+ *         description: Worker profession not found
  */
 
-// GET /labour/:id
-router.get('/labour/:id', labourController.getLabourById);
+// GET /worker/:id
+router.get('/worker/:id', workerController.getWorkerById);
 
 /**
  * @swagger
- * /api/labour:
+ * /api/worker:
  *   post:
- *     summary: Create a new labour profession
- *     tags: [Labour]
+ *     summary: Create a new worker profession
+ *     tags: [Worker]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/LabourProfession'
+ *             $ref: '#/components/schemas/workerProfession'
  *     responses:
  *       201:
- *         description: Labour profession created successfully
+ *         description: Worker profession created successfully
  *       400:
  *         description: Invalid request
  */
 
-// POST /labour
-router.post('/labour', labourController.createLabourProfession);
+// POST /worker
+router.post('/worker', workerController.createWorkerProfession);
 
 /**
  * @swagger
- * /api/labour/{id}:
+ * /api/worker/{id}:
  *   put:
- *     summary: Update a labour profession by ID
- *     tags: [Labour]
+ *     summary: Update a worker profession by ID
+ *     tags: [Worker]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: string
  *         required: true
- *         description: Labour profession ID
+ *         description: worker profession ID
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/LabourProfession'
+ *             $ref: '#/components/schemas/workerProfession'
  *     responses:
  *       200:
- *         description: Labour profession updated successfully
+ *         description: Worker profession updated successfully
  *       400:
  *         description: Invalid request
  *       404:
- *         description: Labour profession not found
+ *         description: Worker profession not found
  */
 
-// PUT /labour/:id
-router.put('/labour/:id', labourController.updateLabourProfessionById);
+// PUT /worker/:id
+router.put('/worker/:id', workerController.updateWorkerProfessionById);
 
 /**
  * @swagger
- * /api/labour/{id}:
+ * /api/worker/{id}:
  *   delete:
- *     summary: Delete a labour profession by ID
- *     tags: [Labour]
+ *     summary: Delete a worker profession by ID
+ *     tags: [Worker]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: string
  *         required: true
- *         description: Labour profession ID
+ *         description: Worker profession ID
  *     responses:
  *       204:
- *         description: Labour profession deleted successfully
+ *         description: Worker profession deleted successfully
  *       404:
- *         description: Labour profession not found
+ *         description: Worker profession not found
  */
 
-// DELETE /labour/:id
-router.delete('/labour/:id', labourController.deleteLabourProfessionById);
+// DELETE /worker/:id
+router.delete('/worker/:id', workerController.deleteWorkerProfessionById);
 
 /**
  * @swagger
- * /api/labour/{id}/rate:
+ * /api/worker/{id}/rate:
  *   post:
- *     summary: Add rate to a labour profession
- *     tags: [Labour]
+ *     summary: Add rate to a worker profession
+ *     tags: [Worker]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: string
  *         required: true
- *         description: Labour profession ID
+ *         description: Worker profession ID
  *     requestBody:
  *       required: true
  *       content:
@@ -199,10 +199,10 @@ router.delete('/labour/:id', labourController.deleteLabourProfessionById);
  *       400:
  *         description: Invalid request
  *       404:
- *         description: Labour profession not found
+ *         description: Worker profession not found
  */
 
-// POST /labour/:id/rate
-router.post('/labour/:id/rate', labourController.addRateToLabourProfession);
+// POST /worker/:id/rate
+router.post('/worker/:id/rate', workerController.addRateToWorkerProfession);
 
 export default router;
