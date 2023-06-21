@@ -1,6 +1,6 @@
-# Building Cost API
+# Construction API
 
-BuildingCostApi is a project that provides construction data, including material prices, worker rates, and performance metrics. It is designed for developers, contractors, and project managers in the construction industry.
+Construction API is a project that provides construction data, including material prices, worker rates, and performance metrics. It is designed for developers, contractors, and project managers in the construction industry.
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ Before cloning and running the project, make sure you have the following softwar
 3. Run the following command to clone the project:
 
    ```
-   git clone https://github.com/your-username/building-cost-api.git
+   git clone git@github.com:ojmarte/construction_api.git
    ```
 
 ### Install Dependencies
@@ -29,7 +29,7 @@ Before cloning and running the project, make sure you have the following softwar
 1. Change to the project directory:
 
    ```
-   cd building-cost-api
+   cd construction_api
    ```
 
 2. Run the following command to install the project dependencies:
@@ -63,8 +63,3 @@ This will execute the tests using Mocha.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-
-You can customize this template with specific instructions or additional sections as needed for your project. Make sure to replace placeholders like `your-username` with the actual repository URL or information relevant to your project.
-
-Having a comprehensive README.md file will provide users with the necessary information to get started with your project, clone it, install dependencies, and run it successfully.
