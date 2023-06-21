@@ -1,14 +1,23 @@
 import { Router } from 'express';
 import { MaterialController } from '../controllers/material.controller';
+import { MaterialYieldController } from '../controllers/materialYield.controller';
 
 const router = Router();
 const materialController = new MaterialController();
+const materialYieldController = new MaterialYieldController();
 
 /**
  * @swagger
  * tags:
  *   name: Materials
  *   description: API endpoints for managing materials
+ */
+
+/**
+ * @swagger
+ * tags:
+ *   name: MaterialYields
+ *   description: API endpoints for managing material yields
  */
 
 /**
@@ -50,6 +59,32 @@ const materialController = new MaterialController();
  *         - category
  *         - unit
  *         - prices
+ * 
+ *     MaterialYield:
+ *       type: object
+ *       properties:
+ *         material_id:
+ *           type: string
+ *           format: uuid
+ *           description: The ID of the material
+ *         yield_name:
+ *           type: string
+ *           description: The name of the yield
+ *         category:
+ *           type: string
+ *           description: The category of the yield
+ *         unit:
+ *           type: string
+ *           description: The unit of measurement for the yield
+ *         yield:
+ *           type: number
+ *           description: The yield value
+ *       required:
+ *         - material_id
+ *         - yield_name
+ *         - category
+ *         - unit
+ *         - yield
  */
 
 /**
@@ -68,13 +103,13 @@ router.get('/materials', materialController.getAllMaterials);
 
 /**
  * @swagger
- * /api/materials/{id}:
+ * /api/material/{materialId}:
  *   get:
  *     summary: Get a material by ID
  *     tags: [Materials]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: materialId
  *         schema:
  *           type: string
  *         required: true
@@ -86,12 +121,12 @@ router.get('/materials', materialController.getAllMaterials);
  *         description: Material not found
  */
 
-// GET /materials/:id
-router.get('/materials/:id', materialController.getMaterialById);
+// GET /material/:materialId
+router.get('/material/:materialId', materialController.getMaterialById);
 
 /**
  * @swagger
- * /api/materials:
+ * /api/material:
  *   post:
  *     summary: Create a new material
  *     tags: [Materials]
@@ -109,17 +144,17 @@ router.get('/materials/:id', materialController.getMaterialById);
  */
 
 // POST /materials
-router.post('/materials', materialController.createMaterial);
+router.post('/material', materialController.createMaterial);
 
 /**
  * @swagger
- * /api/materials/{id}:
+ * /api/materials/{materialId}:
  *   put:
  *     summary: Update a material by ID
  *     tags: [Materials]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: materialId
  *         schema:
  *           type: string
  *         required: true
@@ -139,18 +174,18 @@ router.post('/materials', materialController.createMaterial);
  *         description: Material not found
  */
 
-// PUT /materials/:id
-router.put('/materials/:id', materialController.updateMaterialById);
+// PUT /material/:id
+router.put('/material/:materialId', materialController.updateMaterialById);
 
 /**
  * @swagger
- * /api/materials/{id}:
+ * /api/material/{materialId}:
  *   delete:
  *     summary: Delete a material by ID
  *     tags: [Materials]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: materialId
  *         schema:
  *           type: string
  *         required: true
@@ -162,18 +197,18 @@ router.put('/materials/:id', materialController.updateMaterialById);
  *         description: Material not found
  */
 
-// DELETE /materials/:id
-router.delete('/materials/:id', materialController.deleteMaterialById);
+// DELETE /material/:materialId
+router.delete('/material/:materialId', materialController.deleteMaterialById);
 
 /**
  * @swagger
- * /api/materials/{id}/price:
+ * /api/material/{materialId}/price:
  *   post:
  *     summary: Add price to a material
  *     tags: [Materials]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: materialId
  *         schema:
  *           type: string
  *         required: true
@@ -198,7 +233,145 @@ router.delete('/materials/:id', materialController.deleteMaterialById);
  *         description: Material not found
  */
 
-// POST /materials/:id/price
-router.post('/materials/:id/price', materialController.addPriceToMaterial);
+// POST /material/:id/price
+router.post('/material/:materialId/price', materialController.addPriceToMaterial);
+
+
+/**
+ * @swagger
+ * /api/material/yield:
+ *   post:
+ *     summary: Create a new material yield
+ *     tags: [MaterialYields]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/MaterialYield'
+ *     responses:
+ *       201:
+ *         description: Material yield created successfully
+ *       400:
+ *         description: Invalid request
+ */
+
+// POST /material/yield
+router.post('/material/yield', materialYieldController.createMaterialYield);
+
+/**
+ * @swagger
+ * /api/material/yield/{materialId}:
+ *   put:
+ *     summary: Update a material yield by ID
+ *     tags: [MaterialYields]
+ *     parameters:
+ *       - in: path
+ *         name: materialId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Material yield ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/MaterialYield'
+ *     responses:
+ *       200:
+ *         description: Material yield updated successfully
+ *       400:
+ *         description: Invalid request
+ *       404:
+ *         description: Material yield not found
+ */
+
+// PUT /material-yields/:materialId
+router.put('/material/yield/:materialId', materialYieldController.updateMaterialYieldById);
+
+/**
+ * @swagger
+ * /api/material/yield/{materialId}:
+ *   delete:
+ *     summary: Delete a material yield by ID
+ *     tags: [MaterialYields]
+ *     parameters:
+ *       - in: path
+ *         name: materialId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Material yield ID
+ *     responses:
+ *       204:
+ *         description: Material yield deleted successfully
+ *       404:
+ *         description: Material yield not found
+ */
+
+// DELETE /material/yield/:materialId
+router.delete('/material/yield/:materialId', materialYieldController.deleteMaterialYieldById);
+
+/**
+ * @swagger
+ * /api/materials/yield:
+ *   get:
+ *     summary: Get all material yields
+ *     tags: [MaterialYields]
+ *     responses:
+ *       200:
+ *         description: Successful operation
+ */
+
+// GET /materials/yield
+router.get('/materials/yield', materialYieldController.getAllMaterialYields);
+
+/**
+ * @swagger
+ * /api/material/yield/{materialId}:
+ *   get:
+ *     summary: Get a material yield by ID
+ *     tags: [MaterialYields]
+ *     parameters:
+ *       - in: path
+ *         name: materialId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Material yield ID
+ *     responses:
+ *       200:
+ *         description: Successful operation
+ *       404:
+ *         description: Material yield not found
+ */
+
+// GET /material/yield/:materialId
+router.get('/material/yield/:materialId', materialYieldController.getMaterialYieldById);
+
+/**
+ * @swagger
+ * /api/material/yield/{materialId}:
+ *   get:
+ *     summary: Get material yields by material ID
+ *     tags: [MaterialYields]
+ *     parameters:
+ *       - in: path
+ *         name: materialId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Material ID
+ *     responses:
+ *       200:
+ *         description: Successful operation
+ *       404:
+ *         description: Material not found
+ */
+
+// GET /material/yield/materialId/:materialId
+router.get('/material/yield/materialId/:materialId', materialYieldController.getMaterialYieldsByMaterialId);
+
 
 export default router;

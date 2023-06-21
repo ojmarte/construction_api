@@ -78,10 +78,10 @@ const jobController = new JobController();
 
 /**
  * @swagger
- * /api/jobs:
+ * /api/job:
  *   post:
  *     summary: Create a new job
- *     tags: [Job]
+ *     tags: [Jobs]
  *     requestBody:
  *       required: true
  *       content:
@@ -95,18 +95,18 @@ const jobController = new JobController();
  *         description: Invalid request
  */
 
-// POST /jobs
-router.post('/jobs', jobController.createJob);
+// POST /job
+router.post('/job', jobController.createJob);
 
 /**
  * @swagger
- * /api/jobs/{id}:
+ * /api/job/{jobId}:
  *   put:
  *     summary: Update a job by ID
- *     tags: [Job]
+ *     tags: [Jobs]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: jobId
  *         schema:
  *           type: string
  *         required: true
@@ -126,18 +126,18 @@ router.post('/jobs', jobController.createJob);
  *         description: Job not found
  */
 
-// PUT /job/:id
-router.put('/jobs/:id', jobController.updateJob);
+// PUT /job/:jobId
+router.put('/job/:jobId', jobController.updateJob);
 
 /**
  * @swagger
- * /api/jobs/{id}:
+ * /api/job/{jobId}:
  *   get:
  *     summary: Get a job by ID
- *     tags: [Job]
+ *     tags: [Jobs]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: jobId
  *         schema:
  *           type: string
  *         required: true
@@ -149,15 +149,15 @@ router.put('/jobs/:id', jobController.updateJob);
  *         description: Job not found
  */
 
-// GET /jobs/:id
-router.get('/jobs/:id', jobController.getJobById);
+// GET /job/:jobId
+router.get('/job/:jobId', jobController.getJobById);
 
 /**
  * @swagger
  * /api/jobs:
  *   get:
  *     summary: Get all jobs
- *     tags: [Job]
+ *     tags: [Jobs]
  *     responses:
  *       200:
  *         description: Successful operation
@@ -168,13 +168,13 @@ router.get('/jobs', jobController.getAllJobs);
 
 /**
  * @swagger
- * /api/jobs/{id}:
+ * /api/job/{jobId}:
  *   delete:
  *     summary: Delete a job by ID
- *     tags: [Job]
+ *     tags: [Jobs]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: jobId
  *         schema:
  *           type: string
  *         required: true
@@ -186,7 +186,7 @@ router.get('/jobs', jobController.getAllJobs);
  *         description: Job not found
  */
 
-// DELETE /jobs/:id
-router.delete('/jobs/:id', jobController.deleteJob);
+// DELETE /job/:jobId
+router.delete('/job/:jobId', jobController.deleteJob);
 
 export default router;

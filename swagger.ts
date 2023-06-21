@@ -6,8 +6,8 @@ const options = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'building-cost-api',
-      version: '1.0.0',
+      title: 'construction-api',
+      version: '1.0.4',
       description: 'Your go-to source for construction data. Access material prices, worker rates, and performance metrics for informed decision-making and project optimization. Ideal for developers, contractors, and project managers in the construction industry.',
     },
     basePath: '/', // The base URL of your API

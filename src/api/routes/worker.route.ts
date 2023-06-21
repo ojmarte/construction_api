@@ -7,7 +7,7 @@ const workerController = new WorkerController();
 /**
  * @swagger
  * tags:
- *   name: Worker
+ *   name: Workers
  *   description: API endpoints for managing worker professions
  */
 
@@ -58,27 +58,27 @@ const workerController = new WorkerController();
 
 /**
  * @swagger
- * /api/worker:
+ * /api/workers:
  *   get:
  *     summary: Get all worker professions
- *     tags: [Worker]
+ *     tags: [Workers]
  *     responses:
  *       200:
  *         description: Successful operation
  */
 
-// GET /worker
-router.get('/worker', workerController.getAllWorkerProfessions);
+// GET /workers
+router.get('/workers', workerController.getAllWorkerProfessions);
 
 /**
  * @swagger
  * /api/worker/{id}:
  *   get:
  *     summary: Get a worker profession by ID
- *     tags: [Worker]
+ *     tags: [Workers]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: workerId
  *         schema:
  *           type: string
  *         required: true
@@ -90,15 +90,15 @@ router.get('/worker', workerController.getAllWorkerProfessions);
  *         description: Worker profession not found
  */
 
-// GET /worker/:id
-router.get('/worker/:id', workerController.getWorkerById);
+// GET /worker/:workerId
+router.get('/worker/:workerId', workerController.getWorkerById);
 
 /**
  * @swagger
  * /api/worker:
  *   post:
  *     summary: Create a new worker profession
- *     tags: [Worker]
+ *     tags: [Workers]
  *     requestBody:
  *       required: true
  *       content:
@@ -117,13 +117,13 @@ router.post('/worker', workerController.createWorkerProfession);
 
 /**
  * @swagger
- * /api/worker/{id}:
+ * /api/worker/{workerId}:
  *   put:
  *     summary: Update a worker profession by ID
- *     tags: [Worker]
+ *     tags: [Workers]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: workerId
  *         schema:
  *           type: string
  *         required: true
@@ -143,18 +143,18 @@ router.post('/worker', workerController.createWorkerProfession);
  *         description: Worker profession not found
  */
 
-// PUT /worker/:id
-router.put('/worker/:id', workerController.updateWorkerProfessionById);
+// PUT /worker/:workerId
+router.put('/worker/:workerId', workerController.updateWorkerProfessionById);
 
 /**
  * @swagger
- * /api/worker/{id}:
+ * /api/worker/{workerId}:
  *   delete:
  *     summary: Delete a worker profession by ID
- *     tags: [Worker]
+ *     tags: [Workers]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: workerId
  *         schema:
  *           type: string
  *         required: true
@@ -166,18 +166,18 @@ router.put('/worker/:id', workerController.updateWorkerProfessionById);
  *         description: Worker profession not found
  */
 
-// DELETE /worker/:id
-router.delete('/worker/:id', workerController.deleteWorkerProfessionById);
+// DELETE /worker/:workerId
+router.delete('/worker/:workerId', workerController.deleteWorkerProfessionById);
 
 /**
  * @swagger
  * /api/worker/{id}/rate:
  *   post:
  *     summary: Add rate to a worker profession
- *     tags: [Worker]
+ *     tags: [Workers]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: workerId
  *         schema:
  *           type: string
  *         required: true
@@ -202,7 +202,7 @@ router.delete('/worker/:id', workerController.deleteWorkerProfessionById);
  *         description: Worker profession not found
  */
 
-// POST /worker/:id/rate
-router.post('/worker/:id/rate', workerController.addRateToWorkerProfession);
+// POST /worker/:workerId/rate
+router.post('/worker/:workerId/rate', workerController.addRateToWorkerProfession);
 
 export default router;

@@ -68,13 +68,13 @@ router.get('/tools', toolController.getAllTools);
 
 /**
  * @swagger
- * /api/tools/{id}:
+ * /api/tool/{toolId}:
  *   get:
  *     summary: Get a tool by ID
  *     tags: [Tools]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: toolId
  *         schema:
  *           type: string
  *         required: true
@@ -86,12 +86,12 @@ router.get('/tools', toolController.getAllTools);
  *         description: Tool not found
  */
 
-// GET /tools/:id
-router.get('/tools/:id', toolController.getToolById);
+// GET /tool/:id
+router.get('/tool/:toolId', toolController.getToolById);
 
 /**
  * @swagger
- * /api/tools:
+ * /api/tool:
  *   post:
  *     summary: Create a new tool
  *     tags: [Tools]
@@ -108,18 +108,18 @@ router.get('/tools/:id', toolController.getToolById);
  *         description: Invalid request
  */
 
-// POST /tools
-router.post('/tools', toolController.createTool);
+// POST /tool
+router.post('/tool', toolController.createTool);
 
 /**
  * @swagger
- * /api/tools/{id}:
+ * /api/tool/{toolId}:
  *   put:
  *     summary: Update a tool by ID
  *     tags: [Tools]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: toolId
  *         schema:
  *           type: string
  *         required: true
@@ -139,18 +139,18 @@ router.post('/tools', toolController.createTool);
  *         description: Tool not found
  */
 
-// PUT /tools/:id
-router.put('/tools/:id', toolController.updateToolById);
+// PUT /tool/:toolId
+router.put('/tool/:toolId', toolController.updateToolById);
 
 /**
  * @swagger
- * /api/tools/{id}:
+ * /api/tool/{toolId}:
  *   delete:
  *     summary: Delete a tool by ID
  *     tags: [Tools]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: toolId
  *         schema:
  *           type: string
  *         required: true
@@ -162,18 +162,18 @@ router.put('/tools/:id', toolController.updateToolById);
  *         description: Tool not found
  */
 
-// DELETE /tools/:id
-router.delete('/tools/:id', toolController.deleteToolById);
+// DELETE /tool/:toolId
+router.delete('/tool/:toolId', toolController.deleteToolById);
 
 /**
  * @swagger
- * /api/tools/{id}/price:
+ * /api/tool/{toolId}/price:
  *   post:
  *     summary: Add price to a tool
  *     tags: [Tools]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: toolId
  *         schema:
  *           type: string
  *         required: true
@@ -198,7 +198,7 @@ router.delete('/tools/:id', toolController.deleteToolById);
  *         description: Tool not found
  */
 
-// POST /tools/:id/price
-router.post('/tools/:id/price', toolController.addPriceToTool);
+// POST /tool/:toolId/price
+router.post('/tool/:toolId/price', toolController.addPriceToTool);
 
 export default router;
