@@ -16,7 +16,7 @@ const materialYieldController = new MaterialYieldController();
 /**
  * @swagger
  * tags:
- *   name: MaterialYields
+ *   name: Material Yields
  *   description: API endpoints for managing material yields
  */
 
@@ -242,7 +242,7 @@ router.post('/material/:materialId/price', materialController.addPriceToMaterial
  * /api/material/yield:
  *   post:
  *     summary: Create a new material yield
- *     tags: [MaterialYields]
+ *     tags: [Material Yields]
  *     requestBody:
  *       required: true
  *       content:
@@ -264,7 +264,7 @@ router.post('/material/yield', materialYieldController.createMaterialYield);
  * /api/material/yield/{materialId}:
  *   put:
  *     summary: Update a material yield by ID
- *     tags: [MaterialYields]
+ *     tags: [Material Yields]
  *     parameters:
  *       - in: path
  *         name: materialId
@@ -295,7 +295,7 @@ router.put('/material/yield/:materialId', materialYieldController.updateMaterial
  * /api/material/yield/{materialId}:
  *   delete:
  *     summary: Delete a material yield by ID
- *     tags: [MaterialYields]
+ *     tags: [Material Yields]
  *     parameters:
  *       - in: path
  *         name: materialId
@@ -318,7 +318,7 @@ router.delete('/material/yield/:materialId', materialYieldController.deleteMater
  * /api/materials/yield:
  *   get:
  *     summary: Get all material yields
- *     tags: [MaterialYields]
+ *     tags: [Material Yields]
  *     responses:
  *       200:
  *         description: Successful operation
@@ -332,7 +332,7 @@ router.get('/materials/yield', materialYieldController.getAllMaterialYields);
  * /api/material/yield/{materialId}:
  *   get:
  *     summary: Get a material yield by ID
- *     tags: [MaterialYields]
+ *     tags: [Material Yields]
  *     parameters:
  *       - in: path
  *         name: materialId
@@ -355,7 +355,7 @@ router.get('/material/yield/:materialId', materialYieldController.getMaterialYie
  * /api/material/yield/{materialId}:
  *   get:
  *     summary: Get material yields by material ID
- *     tags: [MaterialYields]
+ *     tags: [Material Yields]
  *     parameters:
  *       - in: path
  *         name: materialId

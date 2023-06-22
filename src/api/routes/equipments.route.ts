@@ -16,7 +16,7 @@ const equipmentPerformanceController = new EquipmentPerformanceController();
 /**
  * @swagger
  * tags:
- *   name: EquipmentPerformance
+ *   name: Equipment Performance
  *   description: API endpoints for managing equipment performance
  */
 
@@ -248,7 +248,7 @@ router.post('/equipment/:equipmentId/price', equipmentController.addPriceToEquip
  * /api/equipment/performance:
  *   post:
  *     summary: Create a new equipment performance
- *     tags: [EquipmentPerformance]
+ *     tags: [Equipment Performance]
  *     requestBody:
  *       required: true
  *       content:
@@ -270,7 +270,7 @@ router.post('/equipment/performance', equipmentPerformanceController.createEquip
  * /api/equipments/performance:
  *   get:
  *     summary: Get all equipment performances
- *     tags: [EquipmentPerformance]
+ *     tags: [Equipment Performance]
  *     responses:
  *       200:
  *         description: Successful operation
@@ -284,7 +284,7 @@ router.get('/equipments/performance', equipmentPerformanceController.getAllEquip
  * /api/equipment/performance/{equipmentId}:
  *   get:
  *     summary: Get an equipment performance by ID
- *     tags: [EquipmentPerformance]
+ *     tags: [Equipment Performance]
  *     parameters:
  *       - in: path
  *         name: equipmentId
@@ -307,7 +307,7 @@ router.get('/equipment/performance/:id', equipmentPerformanceController.getEquip
  * /api/equipment/performance/{equipmentId}:
  *   get:
  *     summary: Get equipment performances by equipment ID
- *     tags: [EquipmentPerformance]
+ *     tags: [Equipment Performance]
  *     parameters:
  *       - in: path
  *         name: equipmentId
@@ -330,7 +330,7 @@ router.get('/equipment/performance/:equipmentId', equipmentPerformanceController
  * /api/equipment/performance/{equipmentId}:
  *   put:
  *     summary: Update an equipment performance by ID
- *     tags: [EquipmentPerformance]
+ *     tags: [Equipment Performance]
  *     parameters:
  *       - in: path
  *         name: equipmentId
@@ -361,7 +361,7 @@ router.put('/equipment/performance/:equipmentId', equipmentPerformanceController
  * /api/equipment/performance/{equipmentId}:
  *   delete:
  *     summary: Delete an equipment performance by ID
- *     tags: [EquipmentPerformance]
+ *     tags: [Equipment Performance]
  *     parameters:
  *       - in: path
  *         name: equipmentId
